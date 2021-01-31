@@ -36,7 +36,7 @@
 }
 
 input:checked + .slider {
-  background-color: dimgray;
+  background-color: DarkSlateBlue;
 }
 
 input:focus + .slider {

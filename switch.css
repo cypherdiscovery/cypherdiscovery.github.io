@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: FBF594;
+  background-color: LightYellow;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -32,17 +32,17 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: DCDCDC;
+  background-color: Gainsboro;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: 483D8B;
+  background-color: DarkSlateBlue;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px FBF594;
+  box-shadow: 0 0 1px LightYellow;
 }
 
 input:checked + .slider:before {

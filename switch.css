@@ -31,7 +31,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: blue;
+  background-color: dimgray;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -41,7 +41,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px dimgray;
+  box-shadow: 0 0 1px yellow;
 }
 
 input:checked + .slider:before {

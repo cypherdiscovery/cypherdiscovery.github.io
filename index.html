@@ -11,12 +11,17 @@
 <h2>Toggle Switch</h2>
 
 <label class="switch">
-  <input type="checkbox" onclick="background()">
+  <input type="checkbox" id="viewMode" onclick="background()">
   <span class="slider"></span>
 </label>
 <script type="text/javascript">
     function background() {
-        document.body.style.backgroundColor = "red";
+		var checkBox = document.getElementById("veiwMode");
+		if (checkBox.checked == true){
+			document.body.style.backgroundColor = "black";
+		}else{
+			document.body.style.backgroundColor = "white";
+		}
     }
 </script>
 

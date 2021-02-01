@@ -37,6 +37,11 @@
 
 input:checked + .slider {
   background-color: DarkSlateBlue;
+  <script>
+  {
+  document.body.style.backgroundColor = "red";
+  }
+  </script>
 }
 
 input:focus + .slider {

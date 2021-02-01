@@ -1,5 +1,5 @@
 .switch {
-  position: relative;
+  float: right;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -30,7 +30,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: dimgray;
+  background-color: blue;
   -webkit-transition: .4s;
   transition: .4s;
 }

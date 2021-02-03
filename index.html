@@ -12,7 +12,7 @@
         </script>
 </head>
 <body>
-<h2>Cypher Discovery</h2>
+<img id = "title" src="images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
 
 <label class="switch">
   <input type="checkbox" id="viewMode" onclick="background()">
@@ -24,9 +24,11 @@
 		if (checkBox.checked == true){
 			document.body.style.color = "LightCyan";
 			document.body.style.backgroundColor = "black";
+			document.getElementById("title").src = "images/DarkTitle.png";
 		}else{
 			document.body.style.color = "LightSlateGrey";
 			document.body.style.backgroundColor = "white";
+			document.getElementById("title").src = "images/LightTitle.png";
 		}
     }
 </script>

@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="https://cypherdiscovery.github.io/switch.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\Lottie\OneDrive - Hills Road Sixth Form College\EP-Y1-20FD22 Lottie Deane\CypherDiscovery\switch.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\Lottie\OneDrive - Hills Road Sixth Form College\EP-Y1-20FD22 Lottie Deane\CypherDiscovery\menu.css">
+<link rel="stylesheet" type="text/css" href="C:\Users\Lottie\OneDrive - Hills Road Sixth Form College\EP-Y1-20FD22 Lottie Deane\CypherDiscovery\variable.css">
+
 <html>
-<head>
+<h1>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript">
         function initialise() {
             document.body.style.color = "LightSlateGrey";
 			document.body.style.backgroundColor = "white";
+			document.style.setProperty('--mainColour', '#B0C4DE');
+			document.style.setProperty('--textColour', '#778899');
+			document.style.setProperty('--backColour', '#FFFFFF');
+			document.style.setProperty('--shadowMain', '#A0B4CE');
         }
         window.onload = initialise;
         </script>
-</head>
-<body>
+</h1>
+<h2>
 <img id = "title" src="images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
 
 <label class="switch">
@@ -20,18 +27,56 @@
 </label>
 <script type="text/javascript">
     function background() {
+		let root = document.documentElement;
 		var checkBox = document.getElementById("viewMode");
 		if (checkBox.checked == true){
 			document.body.style.color = "LightCyan";
 			document.body.style.backgroundColor = "black";
 			document.getElementById("title").src = "images/DarkTitle.png";
+			root.style.setProperty('--mainColour', '#483D8B');
+			root.style.setProperty('--textColour', '#E0FFFF');
+			root.style.setProperty('--backColour', '#000000');
+			root.style.setProperty('--shadowMain', '#382C7A');
 		}else{
 			document.body.style.color = "LightSlateGrey";
 			document.body.style.backgroundColor = "white";
 			document.getElementById("title").src = "images/LightTitle.png";
+			root.style.setProperty('--mainColour', '#B0C4DE');
+			root.style.setProperty('--textColour', '#778899');
+			root.style.setProperty('--backColour', '#FFFFFF');
+			root.style.setProperty('--shadowMain', '#A0B4CE');
 		}
     }
 </script>
+</h2>
+<h3>
+<div id = "menu">
+	<div class="dropdown">
+	  <button class="dropbtn">Discover</button>
+	  <div class="dropdown-content">
+		<a href="#">Caesar Cypher</a>
+		<a href="#">Affine Cypher</a>
+		<a href="#">Vigenere Cypher</a>
+	  </div>
+	</div>
 
-</body>
+
+	<div class="dropdown">
+	  <button class="dropbtn">Tools</button>
+	  <div class="dropdown-content">
+		<a href="#">Frequency Analyser</a>
+	  </div>
+	</div>
+	
+	<div class="dropdown">
+	  <button class="dropbtn">About</button>
+	  <div class="dropdown-content">
+		<a href="#">About Me</a>
+		<a href="#">Cryptography</a>
+		<a href="#">History of Caesar Cypher</a>
+	  </div>
+	</div>
+</div>
+
+</h3>
 </html> 

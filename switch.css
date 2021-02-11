@@ -1,5 +1,4 @@
 
-
 .switch {
   position: absolute;
   top: 30px;
@@ -22,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: LightYellow;
+  background-color: var(--mainColour);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -34,7 +33,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: LightSlateGrey;
+  background-color: var(--textColour);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -45,7 +44,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px LightSlateGrey;
+  box-shadow: 0 0 1px var(--shadowMain);
 }
 
 input:checked + .slider:before {

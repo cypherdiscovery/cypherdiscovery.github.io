@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="..\css\switch.css">
+<link rel="stylesheet" type="text/css" href="..\css\menu.css">
+<link rel="stylesheet" type="text/css" href="..\css\variable.css">
+
+<html>
+<h1>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</h1>
+<h2><a href="../index.html">
+<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+</a>
+<label class="switch">
+  <script type="text/javascript" src="..\javascript\darkMode.js"></script>
+  <input type="checkbox" id="viewMode" onclick="background('../')">
+  <span class="slider"></span>
+</label>
+<script>checkMode("../");</script>
+</h2>
+<h3>
+<div id = "menu">
+	<div class="dropdown">
+	  <button class="dropbtn">Discover</button>
+	  <div class="dropdown-content">
+		<a href="caesar.html">Caesar Cypher</a>
+		<a href="affine.html">Affine Cypher</a>
+		<a href="vigenere.html">Vigenere Cypher</a>
+	  </div>
+	</div>
+
+
+	<div class="dropdown">
+	  <button class="dropbtn">Tools</button>
+	  <div class="dropdown-content">
+		<a href="../tools/frequency_tool.html">Frequency Analyser</a>
+	  </div>
+	</div>
+	
+	<div class="dropdown">
+	  <button class="dropbtn">About</button>
+	  <div class="dropdown-content">
+		<a href="../about/about_me.html">About Me</a>
+		<a href="../about/cryptography.html">Cryptography</a>
+		<a href="../about/caesar_history.html">History of Caesar Cypher</a>
+	  </div>
+	</div>
+</div>
+
+</h3>
+<p>caesar cypher</p>
+</html> 

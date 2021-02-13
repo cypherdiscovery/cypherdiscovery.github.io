@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
 
 <html>
 <h1>
@@ -47,5 +48,36 @@
 </div>
 
 </h3>
-<p>caesar cypher</p>
+
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>The Caesar Cypher</strong> 
+</h4>
+<p>
+	<div class="boxed">
+	<strong>Input Text:</strong> 
+	<script type="text/javascript" src="..\javascript\inputs.js"></script>
+	<span class="textarea" role="textbox" contenteditable></span>
+	<label class="container">Cypher
+	  <input type="checkbox" checked="checked" id = "cypher" onclick="cypher()">
+	  <span class="checkmark"></span>
+	</label>
+
+	<label class="container">Decypher
+	  <input type="checkbox" id="decypher" onclick="decypher()">
+	  <span class="checkmark"></span>
+	</label>
+	</div>
+	<div class="boxed"><strong>Key:</strong></div>
+	<div class="boxed" id="keyType">
+	  <label class="container">Random
+	  <input type="checkbox" id="Random" onclick="random()" checked="checked">
+	  <span class="checkmark"></span>
+	  </label>
+	  <label class="container">Known Key: 
+	  <input type="checkbox" id="Known" onclick="known()">
+	  <span class="checkmark"></span>
+	  </label>
+	  <input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25">
+	</div>
+</p>
 </html> 

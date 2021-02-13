@@ -11,6 +11,7 @@ function background(data)
 		root.style.setProperty('--textColour', '#E0FFFF');
 		root.style.setProperty('--backColour', '#000000');
 		root.style.setProperty('--shadowMain', '#382C7A');
+		root.style.setProperty('--shadowBack', '#303050');
 		localStorage.setItem("darkMode", 'true');
 	}else{
 		document.body.style.color = "LightSlateGrey";
@@ -21,6 +22,7 @@ function background(data)
 		root.style.setProperty('--textColour', '#778899');
 		root.style.setProperty('--backColour', '#FFFFFF');
 		root.style.setProperty('--shadowMain', '#A0B4CE');
+		root.style.setProperty('--shadowBack', '#DFDFDF');
 		localStorage.setItem("darkMode", 'false');
 	}
 	var dark = localStorage.getItem("darkMode");

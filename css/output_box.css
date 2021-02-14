@@ -1,0 +1,20 @@
+.output { 
+  position: relative;
+  left: 0vw;
+  width: 47vw;  
+  background-color: var(--backColour);
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;  
+}
+.boxed2 { 
+  position: relative;
+  left: 4vw;
+  width: 65vw;  
+  background-color: var(--mainColour);
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2vw;  
+}

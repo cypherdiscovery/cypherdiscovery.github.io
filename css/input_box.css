@@ -11,6 +11,7 @@
 .textarea[contenteditable]:empty::before {
   content: "Attack At Dawn...";
   color: var(--shadowMain);
+  padding-left: 5px; 
 }
 .boxed { 
   position: relative;

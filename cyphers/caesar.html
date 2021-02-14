@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
 <link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
 
 <html>
 <h1>
@@ -69,7 +70,7 @@
 	</div>
 	<div class="boxed"><strong>Key:</strong></div>
 	<div class="boxed" id="keyType">
-	  <label class="container">Random
+	  <label class="container"><span id="random_label">Random</span>
 	  <input type="checkbox" id="Random" onclick="random()" checked="checked">
 	  <span class="checkmark"></span>
 	  </label>
@@ -80,4 +81,47 @@
 	  <input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25">
 	</div>
 </p>
+<p1>
+	<img id = "title" src="../images/wheel.jpg" alt="Cypher Wheel" width="200" height="200" style="margin: 0px 4vw 4vw 0px; float:right;">
+	
+	<div class="boxed2">
+		<strong>Output Text:</strong> 
+		<div class = "output">
+			<span id="output">BUUBDL BU EBXO...</span>
+		</div>
+		<strong>Key:</strong>
+		<div id="keys" class = "keys">
+			<div id="keybox1">
+			  <label class="container"><span id="key1">1<span>
+			  <input type="radio" checked="checked" name="key">
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox2">
+			  <label class="container"><span id="key2">2<span>
+			  <input type="radio" name="key">
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox3">
+			  <label class="container"><span id="key3">3<span>
+			  <input type="radio" name="key">
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox4">
+			  <label class="container"><span id="key4">4<span>
+			  <input type="radio" name="key">
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox5"> 
+			  <label class="container"><span id="key5">5<span>
+			  <input type="radio" name="key">
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+		</div>
+	
+	</div>
+
+</p1>
 </html> 

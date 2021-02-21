@@ -26,18 +26,14 @@ function background(data)
 		localStorage.setItem("darkMode", 'false');
 	}
 	var dark = localStorage.getItem("darkMode");
-	console.log(dark);
 }
 function checkMode(data)
 {
 	var dark = localStorage.getItem("darkMode");
-	console.log(dark);
 	if(dark=="false")
 	{
-		console.log("light time");
 		document.getElementById("viewMode").checked = false;
 	}else{
-		console.log("dark time");
 		document.getElementById("viewMode").checked = true;
 	}
 	background(data);

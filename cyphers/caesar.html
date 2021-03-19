@@ -58,28 +58,30 @@
 	<strong>Input Text:</strong> 
 	<script type="text/javascript" src="..\javascript\inputs.js"></script>
 	<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
-	<div id="input" class="textarea" role="textbox" contenteditable></div>
+	<div>
+	<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" cols="120" rows="num" onkeyup="UpdateCaesar('textarea');"></textarea>
+	</div>
 	<label class="container">Cypher
-	  <input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateCaesar();">
+	  <input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateCaesar('checkbox');">
 	  <span class="checkmark"></span>
 	</label>
 
 	<label class="container">Decypher
-	  <input type="checkbox" id="decypher" onclick="decypher(); UpdateCaesar();">
+	  <input type="checkbox" id="decypher" onclick="decypher(); UpdateCaesar('checkbox');">
 	  <span class="checkmark"></span>
 	</label>
 	</div>
 	<div class="boxed"><strong>Key:</strong></div>
 	<div class="boxed" id="keyType">
 	  <label class="container"><span id="random_label">Random</span>
-	  <input type="checkbox" id="Random" onclick="Random(); keySwitch('Random','Known'); UpdateCaesar();" checked="checked">
+	  <input type="checkbox" id="Random" onclick="keySwitch('Random','Known'); UpdateCaesar('checkbox');" checked="checked">
 	  <span class="checkmark"></span>
 	  </label>
 	  <label class="container">Known Key: 
-	  <input type="checkbox" id="Known" onclick="Known(); keySwitch('Known','Random'); UpdateCaesar();">
+	  <input type="checkbox" id="Known" onclick="keySwitch('Known','Random'); UpdateCaesar('checkbox');">
 	  <span class="checkmark"></span>
 	  </label>
-	  <input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25" value="1">
+	  <input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25" value="1" onchange="UpdateCaesar('checkbox')">
 	</div>
 </p>
 <p1>
@@ -94,29 +96,29 @@
 		<div id="keys" class = "keys">
 			<div id="keybox1">
 			  <label class="container">
-			  <input type="radio" checked="checked" name="key" id="key1" value="1" onclick="UpdateCaesar()">1
+			  <input type="radio" checked="checked" name="key" id="key1" value="1" onclick="UpdateCaesar('checkbox')">1
 			  <span class="checkmark"></span>
 			  </label>
 			</div>
 			<div id="keybox2">
 			  <label class="container">
-			  <input type="radio" name="key" id="key2" value="2" onclick="UpdateCaesar()">2
+			  <input type="radio" name="key" id="key2" value="2" onclick="UpdateCaesar('checkbox')">2
 			  <span class="checkmark"></span>
 			  </label>
 			</div>
 			<div id="keybox3">
 			  <label class="container">
-			  <input type="radio" name="key" id="key3"  value="3" onclick="UpdateCaesar()">3
+			  <input type="radio" name="key" id="key3"  value="3" onclick="UpdateCaesar('checkbox')">3
 			  <span class="checkmark"></span>
 			  </label>
 			</div><div id="keybox4">
 			  <label class="container">
-			  <input type="radio" name="key" id="key4"  value="4" onclick="UpdateCaesar()">4
+			  <input type="radio" name="key" id="key4"  value="4" onclick="UpdateCaesar('checkbox')">4
 			  <span class="checkmark"></span>
 			  </label>
 			</div><div id="keybox5"> 
 			  <label class="container">
-			  <input type="radio" name="key" id="key5"  value="5" onclick="UpdateCaesar()">5
+			  <input type="radio" name="key" id="key5"  value="5" onclick="UpdateCaesar('checkbox')">5
 			  <span class="checkmark"></span>
 			  </label>
 			</div>

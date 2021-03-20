@@ -59,7 +59,7 @@
 	<script type="text/javascript" src="..\javascript\inputs.js"></script>
 	<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
 	<div>
-	<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" cols="120" rows="num" onkeyup="UpdateCaesar('textarea');"></textarea>
+	<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateCaesar('textarea');"></textarea>
 	</div>
 	<label class="container">Cypher
 	  <input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateCaesar('checkbox');">
@@ -89,36 +89,34 @@
 	
 	<div class="boxed2">
 		<strong>Output Text:</strong> 
-		<div class = "output">
-			<span id="output">BUUBDL BU EPOF...</span>
-		</div>
+		<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
 		<strong>Key:</strong>
 		<div id="keys" class = "keys">
 			<div id="keybox1">
 			  <label class="container">
-			  <input type="radio" checked="checked" name="key" id="key1" value="1" onclick="UpdateCaesar('checkbox')">1
+			  <input type="radio" checked="checked" name="key" id="key1" value="1" onclick="UpdateCaesar('radiobox')">1
 			  <span class="checkmark"></span>
 			  </label>
 			</div>
 			<div id="keybox2">
 			  <label class="container">
-			  <input type="radio" name="key" id="key2" value="2" onclick="UpdateCaesar('checkbox')">2
+			  <input type="radio" name="key" id="key2" value="2" onclick="UpdateCaesar('radiobox')">2
 			  <span class="checkmark"></span>
 			  </label>
 			</div>
 			<div id="keybox3">
 			  <label class="container">
-			  <input type="radio" name="key" id="key3"  value="3" onclick="UpdateCaesar('checkbox')">3
+			  <input type="radio" name="key" id="key3"  value="3" onclick="UpdateCaesar('radiobox')">3
 			  <span class="checkmark"></span>
 			  </label>
 			</div><div id="keybox4">
 			  <label class="container">
-			  <input type="radio" name="key" id="key4"  value="4" onclick="UpdateCaesar('checkbox')">4
+			  <input type="radio" name="key" id="key4"  value="4" onclick="UpdateCaesar('radiobox')">4
 			  <span class="checkmark"></span>
 			  </label>
 			</div><div id="keybox5"> 
 			  <label class="container">
-			  <input type="radio" name="key" id="key5"  value="5" onclick="UpdateCaesar('checkbox')">5
+			  <input type="radio" name="key" id="key5"  value="5" onclick="UpdateCaesar('radiobox')">5
 			  <span class="checkmark"></span>
 			  </label>
 			</div>

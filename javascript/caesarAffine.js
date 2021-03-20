@@ -46,11 +46,11 @@ function Random(){
 	document.getElementById("keybox4").style.display = "block";
 	document.getElementById("keybox5").style.display = "block";
 	
-	document.getElementById("keybox1").innerHTML = "<label class='container'><span id='key1'>"+keys[0]+"<span><input type='radio' checked='checked' name='key'  value="+keys[0]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";	
-	document.getElementById("keybox2").innerHTML = "<label class='container'><span id='key2'>"+keys[1]+"<span><input type='radio' name='key' value="+keys[1]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox3").innerHTML = "<label class='container'><span id='key3'>"+keys[2]+"<span><input type='radio' name='key' value="+keys[2]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox4").innerHTML = "<label class='container'><span id='key4'>"+keys[3]+"<span><input type='radio' name='key' value="+keys[3]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox5").innerHTML = "<label class='container'><span id='key5'>"+keys[4]+"<span><input type='radio' name='key' value="+keys[4]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox1").innerHTML = "<label class='container'><span id='key1'>"+keys[0]+"<span><input type='radio' checked='checked' name='key'  value="+keys[0]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";	
+	document.getElementById("keybox2").innerHTML = "<label class='container'><span id='key2'>"+keys[1]+"<span><input type='radio' name='key' value="+keys[1]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox3").innerHTML = "<label class='container'><span id='key3'>"+keys[2]+"<span><input type='radio' name='key' value="+keys[2]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox4").innerHTML = "<label class='container'><span id='key4'>"+keys[3]+"<span><input type='radio' name='key' value="+keys[3]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox5").innerHTML = "<label class='container'><span id='key5'>"+keys[4]+"<span><input type='radio' name='key' value="+keys[4]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
 }
 
 function Cypher(a, b){
@@ -167,11 +167,16 @@ function solveCaesarKey(){
 			likely[i]+=26;
 		}
 	}
-	document.getElementById("keybox1").innerHTML = "<label class='container'><span id='key1'>"+likely[0]+"<span><input type='radio' checked='checked' name='key'  value="+likely[0]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";	
-	document.getElementById("keybox2").innerHTML = "<label class='container'><span id='key2'>"+likely[1]+"<span><input type='radio' name='key' value="+likely[1]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox3").innerHTML = "<label class='container'><span id='key3'>"+likely[2]+"<span><input type='radio' name='key' value="+likely[2]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox4").innerHTML = "<label class='container'><span id='key4'>"+likely[3]+"<span><input type='radio' name='key' value="+likely[3]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
-	document.getElementById("keybox5").innerHTML = "<label class='container'><span id='key5'>"+likely[4]+"<span><input type='radio' name='key' value="+likely[4]+" onclick='UpdateCaesar(\"checkbox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox2").style.display = "block";
+	document.getElementById("keybox3").style.display = "block";
+	document.getElementById("keybox4").style.display = "block";
+	document.getElementById("keybox5").style.display = "block";
+	
+	document.getElementById("keybox1").innerHTML = "<label class='container'><span id='key1'>"+likely[0]+"<span><input type='radio' checked='checked' name='key'  value="+likely[0]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";	
+	document.getElementById("keybox2").innerHTML = "<label class='container'><span id='key2'>"+likely[1]+"<span><input type='radio' name='key' value="+likely[1]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox3").innerHTML = "<label class='container'><span id='key3'>"+likely[2]+"<span><input type='radio' name='key' value="+likely[2]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox4").innerHTML = "<label class='container'><span id='key4'>"+likely[3]+"<span><input type='radio' name='key' value="+likely[3]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
+	document.getElementById("keybox5").innerHTML = "<label class='container'><span id='key5'>"+likely[4]+"<span><input type='radio' name='key' value="+likely[4]+" onclick='UpdateCaesar(\"radiobox\")'><span class='checkmark'></span></label>";
 
 }
 function frequencyAnalasis(){
@@ -195,11 +200,13 @@ function frequencyAnalasis(){
 function UpdateCaesar(type){
 	if(type=="textarea"){
 		if(document.getElementById("Random").checked && document.getElementById("decypher").checked && type=="textarea"){
-		solveCaesarKey();
+			solveCaesarKey();
 		}
-	}else{
+	}else if(type=="checkbox"){
 		if(document.getElementById("Random").checked && document.getElementById("cypher").checked){
 			Random();
+		}else if(document.getElementById("Random").checked && document.getElementById("decypher").checked){
+			solveCaesarKey();
 		}else if(document.getElementById("Known").checked){
 			Known();
 		}

@@ -18,3 +18,21 @@
   padding-bottom: 5px;
   padding-left: 2vw;  
 }
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto; 
+}
+.imgOuter {
+  margin: 0px 4vw 4vw 0px; 
+  float:right;
+  position: relative;
+  z-index: 1;
+}
+.imgInner {
+  position: absolute; 
+  bottom: 8px; 
+  left: 6px;
+  z-index: 2;
+  margin: 0 0 -6px -6px;
+}

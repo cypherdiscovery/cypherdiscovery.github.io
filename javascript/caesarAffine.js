@@ -197,6 +197,13 @@ function frequencyAnalasis(){
 	}
 	return freqArray;
 }
+function UpdateRotation() {
+        var img = document.getElementById('inner');
+		var key = document.querySelector('input[name="key"]:checked').value;
+		var neededRotation = Math.round(key*13.84615385);
+		var transformation = 'rotate('+neededRotation+'deg)';
+        img.style.transform = transformation;
+}
 function UpdateCaesar(type){
 	if(type=="textarea"){
 		if(document.getElementById("Random").checked && document.getElementById("decypher").checked && type=="textarea"){
@@ -219,4 +226,5 @@ function UpdateCaesar(type){
 	}else{
 		Decypher(1, b);
 	}
+	UpdateRotation();
 }

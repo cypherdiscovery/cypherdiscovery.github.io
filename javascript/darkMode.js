@@ -6,11 +6,13 @@ function background(data)
 		document.body.style.color = "LightCyan";
 		document.body.style.backgroundColor = "black";
 		var location = data.concat("images/DarkTitle.png");
-		document.getElementById("title").src = location;
-		var location = data.concat("images/OuterWheelDarkMode.jpg");
-		document.getElementById("wheel").src = location;
-		var location = data.concat("images/InnerWheelDarkMode.png");
-		document.getElementById("inner").src = location;
+		try{
+			document.getElementById("title").src = location;
+			var location = data.concat("images/OuterWheelDarkMode.jpg");
+			document.getElementById("wheel").src = location;
+			var location = data.concat("images/InnerWheelDarkMode.png");
+			document.getElementById("inner").src = location;
+		}
 		root.style.setProperty('--mainColour', '#483D8B');
 		root.style.setProperty('--textColour', '#E0FFFF');
 		root.style.setProperty('--backColour', '#000000');
@@ -22,10 +24,12 @@ function background(data)
 		document.body.style.backgroundColor = "white";
 		var location = data.concat("images/LightTitle.png");
 		document.getElementById("title").src = location;
+		try{
 		var location = data.concat("images/OuterWheelLightMode.jpg");
 		document.getElementById("wheel").src = location;
 		var location = data.concat("images/InnerWheelLightMode.png");
 		document.getElementById("inner").src = location;
+		}
 		root.style.setProperty('--mainColour', '#B0C4DE');
 		root.style.setProperty('--textColour', '#778899');
 		root.style.setProperty('--backColour', '#FFFFFF');

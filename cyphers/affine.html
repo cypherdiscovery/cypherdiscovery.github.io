@@ -102,107 +102,123 @@
 			<input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="bKey" name="quantity" min="1" max="25" value="1" onchange="UpdateAffine('checkbox')">
 	</div>
 </p>
-<p1>
-	<!-- user interface for information output -->
-	<div class="boxed2">
-		<strong>Output Text:</strong> 
-		<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
-		<strong>Key:</strong>
-		<!-- user interface for selecting correct key -->
-		<div id="keys" class = "keys">
-			<div id="keybox1">
-			  <label class="container">
-			  <input type="radio" checked="checked" name="key" id="key1" value="1x+1" onclick="UpdateAffine('radiobox')">1x+1
-			  <span class="checkmark"></span>
-			  </label>
-			</div>
-			<div id="keybox2">
-			  <label class="container">
-			  <input type="radio" name="key" id="key2" value="3x+1" onclick="UpdateAffine('radiobox')">3x+1
-			  <span class="checkmark"></span>
-			  </label>
-			</div>
-			<div id="keybox3">
-			  <label class="container">
-			  <input type="radio" name="key" id="key3"  value="5x+1" onclick="UpdateAffine('radiobox')">5x+1
-			  <span class="checkmark"></span>
-			  </label>
-			</div><div id="keybox4">
-			  <label class="container">
-			  <input type="radio" name="key" id="key4"  value="7x+1" onclick="UpdateAffine('radiobox')">7x+1
-			  <span class="checkmark"></span>
-			  </label>
-			</div><div id="keybox5"> 
-			  <label class="container">
-			  <input type="radio" name="key" id="key5"  value="9x+1" onclick="UpdateAffine('radiobox')">9x+1
-			  <span class="checkmark"></span>
-			  </label>
-			</div>
+<!-- user interface for information output -->
+<div class="boxed2">
+	<strong>Output Text:</strong> 
+	<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
+	<strong>Key:</strong>
+	<!-- user interface for selecting correct key -->
+	<div id="keys" class = "keys">
+		<div id="keybox1">
+		  <label class="container">
+		  <input type="radio" checked="checked" name="key" id="key1" value="1x+1" onclick="UpdateAffine('radiobox')">1x+1
+		  <span class="checkmark"></span>
+		  </label>
 		</div>
-	
-	</div>
-	<div class = "boxed3">
-		<table border="1" cellpadding="3" id="printTable">
-    <tbody><tr>
-        <th>A</th>
-        <th>B</th>      
-        <th>C</th> 
-        <th>D</th>  
-        <th>E</th> 
-        <th>F</th> 
-        <th>G</th> 
-        <th>H</th> 
-        <th>I</th> 
-        <th>J</th> 
-        <th>K</th> 
-        <th>L</th>
-        <th>M</th> 
-        <th>N</th>
-        <th>O</th> 
-        <th>P</th> 
-        <th>Q</th> 
-        <th>R</th> 
-        <th>S</th> 
-        <th>T</th> 
-        <th>U</th> 
-        <th>V</th> 
-        <th>W</th> 
-        <th>X</th> 
-        <th>Y</th> 
-        <th>Z</th>
-    </tr>
-    <tr id = "exampleKey">
-        <th>a</th>
-        <th>b</th>      
-        <th>c</th> 
-        <th>d</th>  
-        <th>e</th> 
-        <th>f</th> 
-        <th>g</th> 
-        <th>h</th> 
-        <th>i</th> 
-        <th>j</th> 
-        <th>k</th> 
-        <th>l</th>
-        <th>m</th> 
-        <th>n</th>
-        <th>o</th> 
-        <th>p</th> 
-        <th>q</th> 
-        <th>r</th> 
-        <th>s</th> 
-        <th>t</th> 
-        <th>u</th> 
-        <th>v</th> 
-        <th>w</th> 
-        <th>x</th> 
-        <th>y</th> 
-        <th>z</th>
-    </tr>
-	</tbody></table>
+		<div id="keybox2">
+		  <label class="container">
+		  <input type="radio" name="key" id="key2" value="3x+1" onclick="UpdateAffine('radiobox')">3x+1
+		  <span class="checkmark"></span>
+		  </label>
+		</div>
+		<div id="keybox3">
+		  <label class="container">
+		  <input type="radio" name="key" id="key3"  value="5x+1" onclick="UpdateAffine('radiobox')">5x+1
+		  <span class="checkmark"></span>
+		  </label>
+		</div><div id="keybox4">
+		  <label class="container">
+		  <input type="radio" name="key" id="key4"  value="7x+1" onclick="UpdateAffine('radiobox')">7x+1
+		  <span class="checkmark"></span>
+		  </label>
+		</div><div id="keybox5"> 
+		  <label class="container">
+		  <input type="radio" name="key" id="key5"  value="9x+1" onclick="UpdateAffine('radiobox')">9x+1
+		  <span class="checkmark"></span>
+		  </label>
+		</div>
 	</div>
 
-</p1>
+</div>
+<div class = "boxed3">
+	<table border="1" cellpadding="3" id="printTable">
+<tbody><tr>
+	<th>A</th>
+	<th>B</th>      
+	<th>C</th> 
+	<th>D</th>  
+	<th>E</th> 
+	<th>F</th> 
+	<th>G</th> 
+	<th>H</th> 
+	<th>I</th> 
+	<th>J</th> 
+	<th>K</th> 
+	<th>L</th>
+	<th>M</th> 
+	<th>N</th>
+	<th>O</th> 
+	<th>P</th> 
+	<th>Q</th> 
+	<th>R</th> 
+	<th>S</th> 
+	<th>T</th> 
+	<th>U</th> 
+	<th>V</th> 
+	<th>W</th> 
+	<th>X</th> 
+	<th>Y</th> 
+	<th>Z</th>
+</tr>
+<tr id = "exampleKey">
+	<th>a</th>
+	<th>b</th>      
+	<th>c</th> 
+	<th>d</th>  
+	<th>e</th> 
+	<th>f</th> 
+	<th>g</th> 
+	<th>h</th> 
+	<th>i</th> 
+	<th>j</th> 
+	<th>k</th> 
+	<th>l</th>
+	<th>m</th> 
+	<th>n</th>
+	<th>o</th> 
+	<th>p</th> 
+	<th>q</th> 
+	<th>r</th> 
+	<th>s</th> 
+	<th>t</th> 
+	<th>u</th> 
+	<th>v</th> 
+	<th>w</th> 
+	<th>x</th> 
+	<th>y</th> 
+	<th>z</th>
+</tr>
+</tbody></table>
+</div>
+<p>
+	<div class="boxed4">
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation1">
+			The Affine Cypher is a Shift Cypher, meaning it encrypts messages by shifting the letters of the alphabet to correspond to different ones. However, where the Caesar Shift cypher used a key formula of x -> x+b (where b is the constant the alphabet is shifted by). The affine cypher uses a key formula  of x -> ax+b (where a and b are both constant keys).
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation2">
+			This cypher is a method for obscuring the text so that it cannot be decyphered using the first exploit, as even if you know what 'e' cyphers to, there are many different key combinations that match this.
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation3">	
+			Like the Caesar Cypher, it is still possible to brute force the Affine cypher. However, in total there are 312 possible combinations (12 for a and 26 for b). However, this is far from practical. (There are only 12 options for a as a must be coprime to 26 (meaning they share no common factors) for the translation to work)
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation4">	
+			</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation5">	
+			</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation6">	
+			</p>
+	</div>
+</p>
 <!-- runs function to activate correct colourmode on page load -->
 <script>checkMode("../");</script>
 </html> 

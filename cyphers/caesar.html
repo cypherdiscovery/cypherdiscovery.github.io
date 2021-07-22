@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- links files containing style classes -->
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
@@ -7,17 +8,25 @@
 
 <html>
 <h1>
+<!-- declares the veiwport to allow control of it -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
-<h2><a href="../index.html">
-<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
-</a>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="../index.html">
+	<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
 <label class="switch">
-  <script type="text/javascript" src="..\javascript\darkMode.js"></script>
-  <input type="checkbox" id="viewMode" onclick="background('../')">
-  <span class="slider"></span>
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="..\javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('../')">
+	<span class="slider"></span>
 </label>
 </h2>
+
+
+<!-- bar of dropdown menus to navigate the website -->
 <h3>
 <div id = "menu">
 	<div class="dropdown">
@@ -49,49 +58,60 @@
 
 </h3>
 
+<!-- page title -->
 <h4 style="font-size:200%; font-family:garamond ; text-align:center;">
 	<strong>The Caesar Cypher</strong> 
 </h4>
-<p>
-	<div class="boxed">
-	<strong>Input Text:</strong> 
-	<script type="text/javascript" src="..\javascript\inputs.js"></script>
-	<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
-	<div>
-	<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateCaesar('textarea');"></textarea>
-	</div>
-	<label class="container">Cypher
-	  <input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateCaesar('checkbox');">
-	  <span class="checkmark"></span>
-	</label>
 
-	<label class="container">Decypher
-	  <input type="checkbox" id="decypher" onclick="decypher(); UpdateCaesar('checkbox');">
-	  <span class="checkmark"></span>
-	</label>
+<p>
+	<!-- user interface for the caesar cypher -->
+	<div class="boxed">
+		<strong>Input Text:</strong> 
+		<!-- links needed javascript functions-->
+		<script type="text/javascript" src="..\javascript\inputs.js"></script>
+		<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
+		<!-- user interface for input text -->
+		<div>
+			<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateCaesar('textarea');"></textarea>
+		</div>
+		
+		<!-- user interface for declaring cypher/decypher -->
+		<label class="container">Cypher
+			<input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateCaesar('checkbox');">
+			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">Decypher
+			<input type="checkbox" id="decypher" onclick="decypher(); UpdateCaesar('checkbox');">
+			<span class="checkmark"></span>
+		</label>
 	</div>
+	<!-- user interface for declaring if the key is known or unknown -->
 	<div class="boxed"><strong>Key:</strong></div>
 	<div class="boxed" id="keyType">
-	  <label class="container"><span id="random_label">Random</span>
-	  <input type="checkbox" id="Random" onclick="keySwitch('Random','Known'); UpdateCaesar('checkbox');" checked="checked">
-	  <span class="checkmark"></span>
-	  </label>
-	  <label class="container">Known Key: 
-	  <input type="checkbox" id="Known" onclick="keySwitch('Known','Random'); UpdateCaesar('checkbox');">
-	  <span class="checkmark"></span>
-	  </label>
-	  <input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25" value="1" onchange="UpdateCaesar('checkbox')">
+			<label class="container"><span id="random_label">Random</span>
+				<input type="checkbox" id="Random" onclick="keySwitch('Random','Known'); UpdateCaesar('checkbox');" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Known Key: 
+				<input type="checkbox" id="Known" onclick="keySwitch('Known','Random'); UpdateCaesar('checkbox');">
+				<span class="checkmark"></span>
+			</label>
+			<input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="quantity" name="quantity" min="1" max="25" value="1" onchange="UpdateCaesar('checkbox')">
 	</div>
 </p>
-<p1>
+<p>
+	<!-- Graphic for the Caesar Wheel -->
 	<div class="imgOuter">
 		<img id = "wheel" src="../images/OuterWheelDarkMode.jpg" alt="Cypher Wheel" width="200" height="200">
 		<img class = "imgInner" id = "inner" src="../images/InnerWheelDarkMode.png" alt="Cypher Wheel" width="100" height="100">
 	</div>
+	<!-- user interface for information output -->
 	<div class="boxed2">
 		<strong>Output Text:</strong> 
 		<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
 		<strong>Key:</strong>
+		<!-- user interface for selecting correct key -->
 		<div id="keys" class = "keys">
 			<div id="keybox1">
 			  <label class="container">
@@ -124,7 +144,20 @@
 		</div>
 	
 	</div>
-
-</p1>
+</p>
+<p>
+	<div class="boxed4">
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation1">
+			The Caesar Cypher is a substitution cypher, meaning it replaces each letter with another letter that corresponds to a certain value of distance away from the original. You can think of this as 'shifting' the letters along by a certain coefficient, which leads to the Caesar Cypher being known as a 'Shift Cypher'.
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation2">
+			The Caesar Cypher came to be known as a Caesar Cypher due to it first being used by Julius Caesar. It was developed around 100 BC to allow his generals to send messages over the battle field safely, as the messages could not be understood at a quick glance. The messages were often convayed using torches.
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation3">
+			The cypher still finds use nowerdays as a way to obscure puzzle solutions or tv show spoilers, to prevent them from being understood at a quick glance.
+		</p>
+	</div>
+</p>
+<!-- runs function to activate correct colourmode on page load -->
 <script>checkMode("../");</script>
 </html> 

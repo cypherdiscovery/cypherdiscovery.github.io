@@ -1,13 +1,14 @@
 function background(data) 
 {
+	//updates all images on the webpage and document colour variables to the correct colour mode 
 	let root = document.documentElement;
 	var checkBox = document.getElementById("viewMode");
 	if (checkBox.checked == true){
 		document.body.style.color = "LightCyan";
 		document.body.style.backgroundColor = "black";
 		var location = data.concat("images/DarkTitle.png");
+		document.getElementById("title").src = location;
 		try{
-			document.getElementById("title").src = location;
 			var location = data.concat("images/OuterWheelDarkMode.jpg");
 			document.getElementById("wheel").src = location;
 			var location = data.concat("images/InnerWheelDarkMode.png");
@@ -44,6 +45,7 @@ function background(data)
 }
 function checkMode(data)
 {
+	//checks the users colour preference and runs appropriate method to reflect it
 	var dark = localStorage.getItem("darkMode");
 	if(dark=="false")
 	{

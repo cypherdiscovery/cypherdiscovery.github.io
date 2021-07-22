@@ -1,22 +1,32 @@
 <!DOCTYPE html>
+<!-- links files containing style classes -->
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
 
 <html>
 <h1>
+<!-- declares the veiwport to allow control of it -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
-<h2><a href="../index.html">
-<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
-</a>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="../index.html">
+	<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
 <label class="switch">
-  <script type="text/javascript" src="..\javascript\darkMode.js"></script>
-  <input type="checkbox" id="viewMode" onclick="background('../')">
-  <span class="slider"></span>
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="..\javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('../')">
+	<span class="slider"></span>
 </label>
-<script>checkMode("../");</script>
 </h2>
+
+
+<!-- bar of dropdown menus to navigate the website -->
 <h3>
 <div id = "menu">
 	<div class="dropdown">
@@ -47,5 +57,152 @@
 </div>
 
 </h3>
-<p>affine cypher</p>
+
+<!-- page title -->
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>The Affine Cypher</strong> 
+</h4>
+
+<p>
+	<!-- user interface for the caesar cypher -->
+	<div class="boxed">
+		<strong>Input Text:</strong> 
+		<!-- links needed javascript functions-->
+		<script type="text/javascript" src="..\javascript\inputs.js"></script>
+		<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
+		<!-- user interface for input text -->
+		<div>
+			<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateAffine('textarea');"></textarea>
+		</div>
+		
+		<!-- user interface for declaring cypher/decypher -->
+		<label class="container">Cypher
+			<input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateAffine('checkbox');">
+			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">Decypher
+			<input type="checkbox" id="decypher" onclick="decypher(); UpdateAffine('checkbox');">
+			<span class="checkmark"></span>
+		</label>
+	</div>
+	<!-- user interface for declaring if the key is known or unknown -->
+	<div class="boxed"><strong>Key:</strong></div>
+	<div class="boxed" id="keyType">
+			<label class="container"><span id="random_label">Random</span>
+				<input type="checkbox" id="Random" onclick="keySwitch('Random','Known'); UpdateAffine('checkbox');" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Known Key: 
+				<input type="checkbox" id="Known" onclick="keySwitch('Known','Random'); UpdateAffine('checkbox');">
+				<span class="checkmark"></span>
+			</label>
+			<input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="aKey" name="quantity" min="1" step = "2" max="25" value="1" onchange="UpdateAffine('checkbox')">
+			x + 
+			<input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" type="number" id="bKey" name="quantity" min="1" max="25" value="1" onchange="UpdateAffine('checkbox')">
+	</div>
+</p>
+<p1>
+	<!-- user interface for information output -->
+	<div class="boxed2">
+		<strong>Output Text:</strong> 
+		<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
+		<strong>Key:</strong>
+		<!-- user interface for selecting correct key -->
+		<div id="keys" class = "keys">
+			<div id="keybox1">
+			  <label class="container">
+			  <input type="radio" checked="checked" name="key" id="key1" value="1x+1" onclick="UpdateAffine('radiobox')">1x+1
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox2">
+			  <label class="container">
+			  <input type="radio" name="key" id="key2" value="3x+1" onclick="UpdateAffine('radiobox')">3x+1
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox3">
+			  <label class="container">
+			  <input type="radio" name="key" id="key3"  value="5x+1" onclick="UpdateAffine('radiobox')">5x+1
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox4">
+			  <label class="container">
+			  <input type="radio" name="key" id="key4"  value="7x+1" onclick="UpdateAffine('radiobox')">7x+1
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox5"> 
+			  <label class="container">
+			  <input type="radio" name="key" id="key5"  value="9x+1" onclick="UpdateAffine('radiobox')">9x+1
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+		</div>
+	
+	</div>
+	<div class = "boxed3">
+		<table border="1" cellpadding="3" id="printTable">
+    <tbody><tr>
+        <th>A</th>
+        <th>B</th>      
+        <th>C</th> 
+        <th>D</th>  
+        <th>E</th> 
+        <th>F</th> 
+        <th>G</th> 
+        <th>H</th> 
+        <th>I</th> 
+        <th>J</th> 
+        <th>K</th> 
+        <th>L</th>
+        <th>M</th> 
+        <th>N</th>
+        <th>O</th> 
+        <th>P</th> 
+        <th>Q</th> 
+        <th>R</th> 
+        <th>S</th> 
+        <th>T</th> 
+        <th>U</th> 
+        <th>V</th> 
+        <th>W</th> 
+        <th>X</th> 
+        <th>Y</th> 
+        <th>Z</th>
+    </tr>
+    <tr id = "exampleKey">
+        <th>a</th>
+        <th>b</th>      
+        <th>c</th> 
+        <th>d</th>  
+        <th>e</th> 
+        <th>f</th> 
+        <th>g</th> 
+        <th>h</th> 
+        <th>i</th> 
+        <th>j</th> 
+        <th>k</th> 
+        <th>l</th>
+        <th>m</th> 
+        <th>n</th>
+        <th>o</th> 
+        <th>p</th> 
+        <th>q</th> 
+        <th>r</th> 
+        <th>s</th> 
+        <th>t</th> 
+        <th>u</th> 
+        <th>v</th> 
+        <th>w</th> 
+        <th>x</th> 
+        <th>y</th> 
+        <th>z</th>
+    </tr>
+	</tbody></table>
+	</div>
+
+</p1>
+<!-- runs function to activate correct colourmode on page load -->
+<script>checkMode("../");</script>
 </html> 

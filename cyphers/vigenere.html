@@ -1,22 +1,32 @@
 <!DOCTYPE html>
+<!-- links files containing style classes -->
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
 
 <html>
 <h1>
+<!-- declares the veiwport to allow control of it -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
-<h2><a href="../index.html">
-<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
-</a>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="../index.html">
+	<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
 <label class="switch">
-  <script type="text/javascript" src="..\javascript\darkMode.js"></script>
-  <input type="checkbox" id="viewMode" onclick="background('../')">
-  <span class="slider"></span>
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="..\javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('../')">
+	<span class="slider"></span>
 </label>
-<script>checkMode("../");</script>
 </h2>
+
+
+<!-- bar of dropdown menus to navigate the website -->
 <h3>
 <div id = "menu">
 	<div class="dropdown">
@@ -47,5 +57,123 @@
 </div>
 
 </h3>
-<p>vigenere cypher</p>
+
+<!-- page title -->
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>The Vigenere Cypher</strong> 
+</h4>
+
+<p>
+	<!-- user interface for the vigenere cypher -->
+	<div class="boxed">
+		<strong>Input Text:</strong> 
+		<!-- links needed javascript functions-->
+		<script type="text/javascript" src="..\javascript\inputs.js"></script>
+		<script type="text/javascript" src="..\javascript\vigenere.js"></script>
+		<!-- user interface for input text -->
+		<div>
+			<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateVigenere('textarea');"></textarea>
+		</div>
+		
+		<!-- user interface for declaring cypher/decypher -->
+		<label class="container">Cypher
+			<input type="checkbox" checked="checked" id = "cypher" onclick="cypher(); UpdateVigenere('checkbox');">
+			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">Decypher
+			<input type="checkbox" id="decypher" onclick="decypher(); UpdateVigenere('checkbox');">
+			<span class="checkmark"></span>
+		</label>
+	</div>
+	<!-- user interface for declaring if the key is known or unknown -->
+	<div class="boxed"><strong>Key:</strong></div>
+	<div class="boxed" id="keyType">
+			<label class="container"><span id="random_label">Random</span>
+				<input type="checkbox" id="Random" onclick="keySwitch('Random','Known'); UpdateVigenere('checkbox');" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Known Key: 
+				<input type="checkbox" id="Known" onclick="keySwitch('Known','Random'); UpdateVigenere('checkbox');">
+				<span class="checkmark"></span>
+			</label>
+			<input style="color: var(--textColour); font-family: Verdana; font-weight: bold; font-size: 12px; background-color: var(--backColour);" placeholder="ALPHA" type="text" id="aKey" name="quantity" onchange="UpdateVigenere('checkbox')">
+	</div>
+</p>
+<p1>
+	<!-- user interface for information output -->
+	<div class="boxed2">
+		<strong>Output Text:</strong> 
+		<textarea  readonly placeholder="BUUBDL BU EPOF..." id = "output" style="resize:none"  ></textarea>
+		<strong>Key:</strong>
+		<!-- user interface for selecting correct key -->
+		<div id="keys" class = "keys">
+			<div id="keybox1">
+			  <label class="container">
+			  <input type="radio" checked="checked" name="key" id="key1" value="ALPHA" onclick="UpdateVigenere('radiobox')">ALPHA
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox2">
+			  <label class="container">
+			  <input type="radio" name="key" id="key2" value="BRAVO" onclick="UpdateVigenere('radiobox')">BRAVO
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+			<div id="keybox3">
+			  <label class="container">
+			  <input type="radio" name="key" id="key3"  value="CHARLIE" onclick="UpdateVigenere('radiobox')">CHARLIE
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox4">
+			  <label class="container">
+			  <input type="radio" name="key" id="key4"  value="DELTA" onclick="UpdateVigenere('radiobox')">DELTA
+			  <span class="checkmark"></span>
+			  </label>
+			</div><div id="keybox5"> 
+			  <label class="container">
+			  <input type="radio" name="key" id="key5"  value="ECHO" onclick="UpdateVigenere('radiobox')">ECHO 
+			  <span class="checkmark"></span>
+			  </label>
+			</div>
+		</div>
+	
+	</div>
+	<div class = "boxed3">
+		<table border="1" cellpadding="1" id="printTable">
+    <tbody>
+	<tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th></tr>
+    <tr><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th></tr>
+    <tr><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th></tr>
+    <tr><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th></tr>
+    <tr><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+    <tr><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+    <tr><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+    <tr><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr>
+    <tr><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+    <tr><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr>
+    <tr><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th></tr>
+    <tr><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th></tr>
+    <tr><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th></tr>
+    <tr><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th></tr>
+    <tr><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th></tr>
+    <tr><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th></tr>
+    <tr><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th></tr>
+    <tr><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th></tr>
+    <tr><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th></tr>
+    <tr><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th></tr>
+    <tr><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th></tr>
+    <tr><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th></tr>
+    <tr><th>W</th><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th></tr>
+    <tr><th>X</th><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th></tr>
+    <tr><th>Y</th><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th></tr>
+    <tr><th>Z</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th></tr>
+    
+    </tr>
+	</tbody></table>
+	</div>
+
+</p1>
+<!-- runs function to activate correct colourmode on page load -->
+<script>checkMode("../");</script>
 </html> 

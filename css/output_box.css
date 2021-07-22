@@ -9,13 +9,25 @@
   padding-left: 5px;  
 }
 .boxed2 { 
+  float: left;
   position: relative;
   left: 4vw;
-  width: 65vw;  
+  width: 48vw;  
   background-color: var(--mainColour);
   padding-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 2vw;  
+}
+.boxed3 { 
+  float: left;
+  display: inline;
+  position: relative;
+  left: 6vw;
+  background-color: var(--mainColour);
+  padding-right: 2vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 2vw;  
 }
 img {

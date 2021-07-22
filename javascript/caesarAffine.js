@@ -401,6 +401,15 @@ function UpdateCaesar(type)
 		Decypher(1, b);
 	}
 	UpdateRotation();
+	if(document.getElementById("cypher").checked){
+			document.getElementById("explanation1").textContent = "The Caesar Cypher is a substitution cypher, meaning it replaces each letter with another letter that corresponds to a certain value of distance away from the original. You can think of this as 'shifting' the letters along by a certain coefficient, which leads to the Caesar Cypher being known as a 'Shift Cypher'.";
+			document.getElementById("explanation2").textContent = "The Caesar Cypher came to be known as a Caesar Cypher due to it first being used by Julius Caesar. It was developed around 100 BC to allow his generals to send messages over the battle field safely, as the messages could not be understood at a quick glance. The messages were often convayed using torches.";
+			document.getElementById("explanation3").textContent = "The cypher still finds use nowerdays as a way to obscure puzzle solutions or tv show spoilers, to prevent them from being understood at a quick glance.";
+	}else {
+			document.getElementById("explanation1").textContent = "The Caesar Cypher has only 25 possible keys, this makes brute forcing the cypher easy. A common way to brute force the cypher is using a cypher wheel, like the one to the right of the page. This allows you to try combnations and translate a small passage of the text until it makes sense. Try brute forcing this passage of text by selecting 'known key' and increasing the value until it makes sense: ";
+			document.getElementById("explanation2").textContent = "PM OL OHK HUFAOPUN JVUMPKLUAPHS AV ZHF, OL DYVAL PA PU JPWOLY, AOHA PZ, IF ZV JOHUNPUN AOL VYKLY VM AOL SLAALYZ VM AOL HSWOHILA.";
+			document.getElementById("explanation3").textContent = "However, just because you can brute force the cypher, doesnt mean you have to. A Principle known as the First Exploit allows you to speed up the process. The First Exploit works with the idea that the character 'e' is the most common letter in the english language. Meaning the key to a caesar cypher can be calculated by finding the most frequent character in a set of cypher text, and assuming this character translates to 'e'. Try choosing the Unknown Key option. This will show the 5 most likely options for the key. You may notice that the correct key is not always the most likely key. This is because in a small sample of text 'e' is not always the most common character.";
+	}
 }
 function UpdateAffine(type){
 	//function to run the appropriate method when a parameter in the user interface is changed on the affine cypher page
@@ -449,4 +458,19 @@ function UpdateAffine(type){
 		Decypher(a,b);
 	}
 	UpdateTable(a,b);
+	if(document.getElementById("cypher").checked){
+			document.getElementById("explanation1").textContent = "The Affine Cypher is a Shift Cypher, meaning it encrypts messages by shifting the letters of the alphabet to correspond to different ones. However, where the Caesar Shift cypher used a key formula of x -> x+b (where b is the constant the alphabet is shifted by). The affine cypher uses a key formula  of x -> ax+b (where a and b are both constant keys).";
+			document.getElementById("explanation2").textContent = "This cypher is a method for obscuring the text so that it cannot be decyphered using the first exploit, as even if you know what 'e' cyphers to, there are many different key combinations that match this.";
+			document.getElementById("explanation3").textContent = "Like the Caesar Cypher, it is still possible to brute force the Affine cypher. However, in total there are 312 possible combinations (12 for a and 26 for b). However, this is far from practical. (There are only 12 options for a as a must be coprime to 26 (meaning they share no common factors) for the translation to work)";
+			document.getElementById("explanation4").textContent = "";
+			document.getElementById("explanation5").textContent = "";
+			document.getElementById("explanation6").textContent = "";
+	}else {
+			document.getElementById("explanation1").textContent = "In order to take a mathematical approach to deciphering without knowing the key, we still use the First exploit, using the knowlege that the two most frequent letters in the cypher text are likely to correspond to 'e' and 't', as these are the most and second most used character in the alphabet. We then calculate the positions of the most frequent letters in the cyphertext compared to 'e' and 't' and use this to set up simultaneous equations.";
+			document.getElementById("explanation2").textContent = "We subtract one equation from the other to cancel out one unknown, and add 26 to the modular number if it is negative. However, we cannot then devide both sides by a number, as this is modular arithmetic where we cannot devide, only multiply. So we multiply the modular side by the number corresponding to the number we want to devide by. Giving us a solveable equation for a and b";
+			document.getElementById("explanation3").textContent = "Example: 'Q' appears for 13% of the letters, 'J' appears for 10% of the letters. Therefore 'e' = 'Q' and 't' = 'J'.";
+			document.getElementById("explanation4").textContent = "'e' - 4 and 'Q' - 16. Therefore equation A: 4a+b=16mod26. 't' - 19 and 'J' - 9 Therefore equation B: 19a+b=9mod26";
+			document.getElementById("explanation5").textContent = "Subtract Equation A from Equation B. Which gives 15a = -7mod26. Add 26 to account for negative giving 15a = 19mod26";
+			document.getElementById("explanation6").textContent = "Multiplying by 7 is equialent to dividing by 15 in mod26 arithmetic. So multiply both sides by 7, giving 105a mod 26 = 133 mod 26. Which Gives a = 3. 5a+b = 19 so b = 4.";
+	}
 }

@@ -168,4 +168,13 @@ function UpdateVigenere(type){
 	}else{
 		Cypher(key, "decypher");
 	}
+	if(document.getElementById("cypher").checked){
+			document.getElementById("explanation1").textContent = "The Vigenere Cypher uses the idea that multiple caesar shifts can be used in a repeating pattern to encrypt a text. With the pattern often corresponding to a repeating keyphrase. This French diplomatic cypher elegantly obscures the First Exploit of frequency analasis.";
+			document.getElementById("explanation2").textContent = "The Cypher utilises the Tablua Recta, shown to the right of the screen. To implement the cypher, you look up the letter corresponding to the collumn letter of the plaintext, and the row letter of the key. Reversing this process to decypher it.";
+			document.getElementById("explanation3").textContent = "Almost impossible to brute force, as with an unknown key length there are infinite possibilities for the key. However, mathematical analasis can still be used to make an attempt.";
+	}else {
+			document.getElementById("explanation1").textContent = "British Mathematician Charles Babbage and the Polish Cryptographer Friedrich Kasiski came up with the idea of the index of coincidences. It allows the length of they key to be found by moving the plaintext along by one character, counting the number of character that match when compared to the original plaintext and recording these 'coincidences' for every character the plaintext can be moved along by. The key length can then be found as it will be the distance between 'peaks' in these coincidences.";
+			document.getElementById("explanation2").textContent = "Once the keylength is known, the problem can then be tackled using the principle that, when multiplying two sets of numbers and adding them all up at the end. The biggest number will be given when the numbers are multiplied by themselves.";
+			document.getElementById("explanation3").textContent = "Create an array of every nth letter (n being the key length), then count the frequencies of each letter in this array. Multiply the relative frequencies with the real frequencies for a shift of 0 and add them. Then repeat this process with a shift of 1, 2, 3...25, The biggest number will correspond to the shift for the first letter of the key. Repeat for every n+1, n+2... n-1 letter to find all letters in the key, then decipher as normal.";
+	}
 }

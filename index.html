@@ -1,22 +1,33 @@
 <!DOCTYPE html>
+<!-- links files containing style classes -->
 <link rel="stylesheet" type="text/css" href="css\switch.css">
 <link rel="stylesheet" type="text/css" href="css\menu.css">
 <link rel="stylesheet" type="text/css" href="css\variable.css">
+<link rel="stylesheet" type="text/css" href="css\input_box.css">
+<link rel="stylesheet" type="text/css" href="css\output_box.css">
 
 <html>
+<!-- declares the veiwport to allow control of it -->
 <h1>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
-<h2><a href="index.html">
-<img id = "title" src="images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
-</a>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="index.html">
+	<img id = "title" src="images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
 <label class="switch">
-  <script type="text/javascript" src="javascript\darkMode.js"></script>
-  <input type="checkbox" id="viewMode" onclick="background('')">
-  <span class="slider"></span>
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('')">
+	<span class="slider"></span>
 </label>
+<!-- runs function to activate correct colourmode on page load -->
 <script>checkMode("");</script>
 </h2>
+
+<!-- bar of dropdown menus to navigate the website -->
 <h3>
 <div id = "menu">
 	<div class="dropdown">
@@ -41,10 +52,69 @@
 	  <div class="dropdown-content">
 		<a href="about/about_me.html">About Me</a>
 		<a href="about/cryptography.html">Cryptography</a>
-		<a href="about/caesar_history.html">History of Caesar Cypher</a>
+		<a href="about/other_cyphers.html">Other Cyphers</a>
 	  </div>
 	</div>
 </div>
-
 </h3>
+
+<p>
+	<!-- user interface -->
+	<div class="boxed">
+		<strong>Input Text:</strong> 
+		<!-- links needed javascript functions-->
+		<script type="text/javascript" src="javascript\inputs.js"></script>
+		<script type="text/javascript" src="javascript\caesarAffine.js"></script>
+		<!-- user interface for input text -->
+		<div>
+			<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateHome();"></textarea>
+		</div>
+		<p style="font-size:125%; font-family:garamond ; text-align:left;">By analysing the distribution of letters, you can see which cypher is most likely to be used for a section of cypher text.</p>
+		<div id = "mostLikely"> Most Likely Cypher: --- </div>
+	</div>
+</p>
+<p>
+	<!-- user interface -->
+	<div class = "boxed8">
+		<div class="boxed7">
+			<p style="font-size:125%; font-family:garamond ; text-align:left;">To discover methods of cryptography, Click here: </p>
+			
+		</div>
+		<div class="dropdown2">
+				<button class="dropbtn">Discover</button>
+				<div class="dropdown-content">
+					<a href="cyphers\caesar.html">Caesar Cypher</a>
+					<a href="cyphers\affine.html">Affine Cypher</a>
+					<a href="cyphers\vigenere.html">Vigenere Cypher</a>
+			</div>
+		</div>
+	</div>
+	<div class = "boxed8">
+		<div class="boxed7">
+			<p style="font-size:125%; font-family:garamond ; text-align:left;">To find tools to help analyse text, Click here: </p>
+			
+		</div>
+		<div class="dropdown2">
+				<button class="dropbtn">Tools</button>
+					<div class="dropdown-content">
+						<a href="tools/frequency_tool.html">Frequency Analyser</a>
+					</div>
+		</div>
+	</div>
+	<div class = "boxed8">
+		<div class="boxed7">
+			<p style="font-size:125%; font-family:garamond ; text-align:left;">To learn more about this website, Click here: </p>
+			
+		</div>
+		<div class="dropdown2">
+				<button class="dropbtn">About</button>
+					<div class="dropdown-content">
+						<a href="about/about_me.html">About Me</a>
+						<a href="about/cryptography.html">Cryptography</a>
+						<a href="about/other_cyphers.html">Other Cyphers</a>
+					</div>
+			</div>
+		</div>
+	</div>
+</p>
 </html> 

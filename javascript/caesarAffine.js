@@ -474,3 +474,101 @@ function UpdateAffine(type){
 			document.getElementById("explanation6").textContent = "Multiplying by 7 is equialent to dividing by 15 in mod26 arithmetic. So multiply both sides by 7, giving 105a mod 26 = 133 mod 26. Which Gives a = 3. 5a+b = 19 so b = 4.";
 	}
 }
+
+function UpdateFrequency(){
+	var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+	freqArray = frequencyAnalasis();
+	
+	stringHTML = "";
+	for(i = 0; i<26; i++){
+		stringHTML = stringHTML.concat("<th>"+freqArray[i]+"</th>");
+	}
+	document.getElementById("exampleKey").innerHTML = stringHTML;
+	TESTER = document.getElementById('tester');
+	var dark = getComputedStyle(document.documentElement).getPropertyValue('--shadowMain');
+	if(dark=="#A0B4CE"){
+		var c = 'rgba(160,180,206,0.8)';
+		var l = 'rgba(255,255,255,0.8)';
+	}else{
+		var c = 'rgba(72,61,139,0.8)';
+		var l = 'rgba(0,0,0,0.8)';
+	}
+	console.log("dark "+dark);
+	var cs = [];
+	for(i=0; i<26; i++){
+		cs[i] = c;
+	}
+	var data = [
+	  {
+		x: letters,
+		y: freqArray,
+		marker:{
+			color: cs
+		},
+		type: 'bar'
+		
+	  }
+	];
+	var layout = {
+	  paper_bgcolor: l,
+	  plot_bgcolor: l
+	};
+	Plotly.newPlot( TESTER, data, layout );
+}
+
+function UpdateHome(){
+	var input = document.getElementById("input").value.toUpperCase();
+	if(input==""){
+		input ="ATTACK AT DAWN...";
+	}
+	var inputLength = input.length;
+	freqArray = frequencyAnalasis();
+	var mean = 0;
+	for (x = 0; x < 26; x++)
+	{
+		mean += freqArray[x];
+	}
+	mean = mean / 26;
+	console.log("mean: "+mean);
+	var sd = 0;
+	for(j = 0; j < 26; j++)
+	{
+		sd += (freqArray[j] - mean)*(freqArray[j]-mean);
+	}
+	sd = sd / 26;
+	sd = Math.sqrt(sd);
+	console.log("SD: "+sd);
+	var type = "";
+	
+	if(sd>0.11*inputLength){
+		var greatest = [0,0];
+		var secondGreatest = [0,0];
+		for(b=0; b<26; b++){
+			
+			if(secondGreatest[0]<freqArray[b]){
+				if(greatest[0]<freqArray[b]){
+					console.log("bah");
+					secondGreatest[0] = greatest[0];
+					secondGreatest[1] = greatest[1];
+					greatest[0]=freqArray[b];
+					greatest[1] = b;
+				}else{
+					console.log("bah2");
+					secondGreatest[0]=freqArray[b];
+					secondGreatest[1] = b;
+				}
+			}
+		}
+		var dif = secondGreatest[1]-greatest[1];
+		console.log(greatest[0]+" "+greatest[1]+" "+secondGreatest[0]+" "+secondGreatest[1]);
+		console.log("dif: "+dif);
+		if(dif==15 || dif==-15){
+			type = "The Caesar Cyper";
+		}else{
+			type = "The Affine Cyper";
+		}
+	}else{
+		type = "The Vigenere Cyper";
+	}
+	document.getElementById("mostLikely").textContent = " Most Likely Cypher: "+type+" ";
+}

@@ -2,8 +2,15 @@
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
 
 <html>
+
+<head>
+  <script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
+</head>
+
 <h1>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
@@ -41,11 +48,104 @@
 	  <div class="dropdown-content">
 		<a href="../about/about_me.html">About Me</a>
 		<a href="../about/cryptography.html">Cryptography</a>
-		<a href="../about/caesar_history.html">History of Caesar Cypher</a>
+		<a href="../about/other_cyphers.html">Other Cyphers</a>
 	  </div>
 	</div>
 </div>
 
 </h3>
-<p>frequency tool</p>
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>Frequency Analyser</strong> 
+</h4>
+
+<p>
+	<!-- user interface for the caesar cypher -->
+	<div class="boxed">
+		<strong>Input Text:</strong> 
+		<!-- links needed javascript functions-->
+		<script type="text/javascript" src="..\javascript\inputs.js"></script>
+		<script type="text/javascript" src="..\javascript\caesarAffine.js"></script>
+		<!-- user interface for input text -->
+		<div>
+			<textarea placeholder="ATTACK AT DAWN..." id = "input" style="resize:none" onkeyup="UpdateFrequency();"></textarea>
+		</div>
+		
+	</div>
+</p>
+<div class = "boxed2">
+	<table border="1" cellpadding="3" id="printTable">
+<tbody><tr>
+	<th>A</th>
+	<th>B</th>      
+	<th>C</th> 
+	<th>D</th>  
+	<th>E</th> 
+	<th>F</th> 
+	<th>G</th> 
+	<th>H</th> 
+	<th>I</th> 
+	<th>J</th> 
+	<th>K</th> 
+	<th>L</th>
+	<th>M</th> 
+	<th>N</th>
+	<th>O</th> 
+	<th>P</th> 
+	<th>Q</th> 
+	<th>R</th> 
+	<th>S</th> 
+	<th>T</th> 
+	<th>U</th> 
+	<th>V</th> 
+	<th>W</th> 
+	<th>X</th> 
+	<th>Y</th> 
+	<th>Z</th>
+</tr>
+<tr id = "exampleKey">
+	<th>4</th>
+	<th>1</th>      
+	<th>0</th> 
+	<th>1</th>  
+	<th>1</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th>
+	<th>0</th> 
+	<th>1</th>
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>3</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>1</th> 
+	<th>0</th> 
+	<th>0</th> 
+	<th>0</th>
+</tr>
+</tbody></table>
+</div>
+
+<div id="tester" style="width:45vw;height:15vw;float:right;"></div>
+<p>
+	<div class="boxed4">
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation1">
+			The First Exploit of cryptograpy is that 'e' and 't' are the most commonly used letters in the english language. This allows many weak cyphers to be cracked faster by simply assuming the most frequent character is 'e' or 't'. 
+			</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation2">
+			While there are methods to obscure this distribution, this exploit plays a role in speeding up the process of decyphering nearly any cypher. 
+		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation3">	
+			See if the distributions in your text match this pattern or if it is an outlier.
+			</p>
+	</div>
+</p>
+<script>UpdateFrequency();</script>
 </html> 

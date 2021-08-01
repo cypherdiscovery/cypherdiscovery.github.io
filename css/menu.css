@@ -14,6 +14,14 @@
   width: 32vw;
 }
 
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  width: 32vw;
+  left: 12vw;
+  top: 1vw;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -36,3 +44,7 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: var(--shadowMain);}
+
+.dropdown2:hover .dropdown-content {display: block;}
+
+.dropdown2:hover .dropbtn {background-color: var(--shadowMain);}

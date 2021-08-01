@@ -42,10 +42,76 @@
   padding-bottom: 5px;
   padding-left: 5px;  
 }
+.boxed5 { 
+  float: left;
+  position: relative;
+  left: 4vw;
+  top: 0.9vw;
+  width: 90vw;  
+  background-color: var(--mainColour);
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;  
+}
+.boxed6 { 
+  float: left;
+  position: relative;
+  left: 4vw;
+  top: 0.9vw;
+  width: 90vw;  
+  background-color: var(--mainColour);
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px; 
+  display: inline-block;  
+}
+.boxed7 { 
+  float: left;
+  position: relative;
+  left: 4vw;
+  right: 4vw;
+  width: 40vw;  
+  background-color: var(--mainColour);
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 2vw; 
+  display: inline-block;
+}
+.boxed8 { 
+  float: left;
+  position: relative;
+  left: 4vw;
+  top: 0.9vw;
+  width: 90vw;  
+  background-color: var(--shadowMain);
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px; 
+}
 img {
     max-width: 100%;
     height: auto;
     width: auto; 
+}
+.imgDifficult{
+    max-width: 10%;
+    height: auto;
+    width: auto; 
+	float:right;
+	position: relative;
+	display: inline;
+}
+.imgDifficult2{
+    max-width: 40%;
+    height: auto;
+    width: auto; 
+	float:right;
+	position: relative;
+	display: inline;
 }
 .imgOuter {
   margin: 0px 4vw 4vw 0px; 

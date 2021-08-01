@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- links files containing style classes -->
+<link rel="stylesheet" type="text/css" href="..\css\switch.css">
+<link rel="stylesheet" type="text/css" href="..\css\menu.css">
+<link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
+
+<html>
+<h1>
+<!-- declares the veiwport to allow control of it -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</h1>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="../index.html">
+	<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
+<label class="switch">
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="..\javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('../')">
+	<span class="slider"></span>
+</label>
+</h2>
+
+
+<!-- bar of dropdown menus to navigate the website -->
+<h3>
+<div id = "menu">
+	<div class="dropdown">
+	  <button class="dropbtn">Discover</button>
+	  <div class="dropdown-content">
+		<a href="../cyphers/caesar.html">Caesar Cypher</a>
+		<a href="../cyphers/affine.html">Affine Cypher</a>
+		<a href="../cyphers/vigenere.html">Vigenere Cypher</a>
+	  </div>
+	</div>
+
+
+	<div class="dropdown">
+	  <button class="dropbtn">Tools</button>
+	  <div class="dropdown-content">
+		<a href="../tools/frequency_tool.html">Frequency Analyser</a>
+	  </div>
+	</div>
+	
+	<div class="dropdown">
+	  <button class="dropbtn">About</button>
+	  <div class="dropdown-content">
+		<a href="../about/about_me.html">About Me</a>
+		<a href="../about/cryptography.html">Cryptography</a>
+		<a href="../about/other_cyphers.html">Other Cyphers</a>
+	  </div>
+	</div>
+</div>
+
+</h3>
+
+<!-- page title -->
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>Other Cyphers</strong> 
+</h4>
+
+<p>
+	<div class="boxed6">
+		<h4 style="font-size:150%; font-family:garamond ; text-align:center;">
+			Morse Code
+		</h4>
+		<div class="imgDifficult">
+			<img id = "Morse" src="../images/Morse.jpg" alt="Morse Code">
+		</div>
+		<div style="display:block">
+			<p style="font-size:150%; font-family:garamond ; text-align:left;" id = "explanation1">
+			Invented by Samuel F.B. Morse during the 1830's for electrical telegraphy. Morse code offers a way to encode letters as a series of dots and dashes for communication via electrical telegraphy.
+			This was later adapted and optimised to be the international morse code system. As a result of a conference of the European nations in 1851. Allowing all characters to be represented in an optimised and standard way.
+			One way it is optimised is by having the most frequent characters in the English Language be represented by codes that take up the least time to transmit. shown by 'e' being a single dot and 't' being a single dash.</p>
+		</div>
+	
+	</div>
+	<div class="boxed6">
+		<h4 style="font-size:150%; font-family:garamond ; text-align:center;">
+			Transposition Cypher
+		</h4>
+		<div class="imgDifficult2">
+			<img id = "Morse" src="../images/Transposition.jpg" alt="Morse Code">
+		</div>
+		<div style="display:block">
+		<p style="font-size:150%; font-family:garamond ; text-align:left;" id = "explanation4">
+		A simple data encryption scheme in which plain text characters are shifted in some regular pattern to form cypher text.
+		Formed by elements of the plain text being written in a pre arranged order into a geometric array that has been agreed upon by the sender and receiver.
+		Security can be improved by the order of collumns being changed based upon a mneumonic. Or by two transformations being combined.</p>
+		</div>
+	</div>
+	<div class="boxed6">
+		<h4 style="font-size:150%; font-family:garamond ; text-align:center;">
+			The Enigma Machine
+		</h4>
+		<div class="imgDifficult2">
+			<img id = "Morse" src="../images/Enigma.jpg" alt="Morse Code">
+		</div>
+		<div style="display:block">
+		<p style="font-size:150%; font-family:garamond ; text-align:left;" id = "explanation7">
+		A device that was used by the German military in WWII to encode strategic messages. The complexity of the machine allowed the transmission of messages without fear of interception.
+		The device works by having 3 cogs with 26 teeth each, allowing messages to be encoded as each tooth will allign with another number on the output, scrambling the letters. Whenever a letter is encoded, the cogs tick round, allowing a seemingly random output. In addition, the number that each letter corresponds to can be changed around. Creating even more possibilities.
+		Without knowing the key, The common 3 rotor single notched Enigma had aproximately 3x10^114 combinatons. Given that the universe is estimated to contain 10^80 atoms, the German cryptographers had alot of faith in this encryption method. However it was still vunerable to the key exchange fault. As the setups of the machines receiving and sending have to be identical. Meaning the setup mus tbe exchanged by hand
+		However, due to the work of cryptographers at Bletchly Park during the war, most noteably Alan Turing's electro-mechanical inventions that sped up the decyphering process such as the Bombe. They were able to intercept and decipher messages, largely based on the principle that the germans would always send wether reports every morning that included the german words for 'weather' and numbers like 'one'. In addition, they noticed letters would never be cyphered as themselves. Removing a large amount of possibilities.</p>
+		</div>
+	</div>
+</p>
+<script>checkMode("../");</script>
+</html> 

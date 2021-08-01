@@ -1,22 +1,32 @@
 <!DOCTYPE html>
+<!-- links files containing style classes -->
 <link rel="stylesheet" type="text/css" href="..\css\switch.css">
 <link rel="stylesheet" type="text/css" href="..\css\menu.css">
 <link rel="stylesheet" type="text/css" href="..\css\variable.css">
+<link rel="stylesheet" type="text/css" href="..\css\input_box.css">
+<link rel="stylesheet" type="text/css" href="..\css\output_box.css">
 
 <html>
 <h1>
+<!-- declares the veiwport to allow control of it -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </h1>
-<h2><a href="../index.html">
-<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
-</a>
+
+<h2>
+	<!-- hyperlink to main page in form of logo image -->
+	<a href="../index.html">
+	<img id = "title" src="../images/LightTitle.png" alt="Cypher Discovery" width="1000" height="70" style="vertical-align:top">
+	</a>
 <label class="switch">
-  <script type="text/javascript" src="..\javascript\darkMode.js"></script>
-  <input type="checkbox" id="viewMode" onclick="background('../')">
-  <span class="slider"></span>
+	<!-- checkbox controlling darkmode, stylised -->
+	<script type="text/javascript" src="..\javascript\darkMode.js"></script>
+	<input type="checkbox" id="viewMode" onclick="background('../')">
+	<span class="slider"></span>
 </label>
-<script>checkMode("../");</script>
 </h2>
+
+
+<!-- bar of dropdown menus to navigate the website -->
 <h3>
 <div id = "menu">
 	<div class="dropdown">
@@ -39,13 +49,29 @@
 	<div class="dropdown">
 	  <button class="dropbtn">About</button>
 	  <div class="dropdown-content">
-		<a href="about_me.html">About Me</a>
-		<a href="cryptography.html">Cryptography</a>
-		<a href="caesar_history.html">History of Caesar Cypher</a>
+		<a href="../about/about_me.html">About Me</a>
+		<a href="../about/cryptography.html">Cryptography</a>
+		<a href="../about/other_cyphers.html">Other Cyphers</a>
 	  </div>
 	</div>
 </div>
 
 </h3>
-<p>about me</p>
+
+<!-- page title -->
+<h4 style="font-size:200%; font-family:garamond ; text-align:center;">
+	<strong>About Me</strong> 
+</h4>
+
+<p>
+	<div class="boxed5">
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation1">
+			I am a sixth form student who has created this repository as part of my Extended Project Qualification.		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation2">
+			I created it with the hopes of strengthening my understanding of cryptography and others who may see this website.		</p>
+		<p style="font-size:125%; font-family:garamond ; text-align:center;" id = "explanation3">
+			Please feel free to use the resources on this website to learn about cryptography or look at the code in this repository to learn more about coding :)		</p>
+	</div>
+</p>
+<script>checkMode("../");</script>
 </html> 

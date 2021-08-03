@@ -23,7 +23,7 @@ function background(data)
 		root.style.setProperty('--shadowBack', '#303050');
 		localStorage.setItem("darkMode", 'true');
 	}else{
-		document.body.style.color = "LightSlateGrey";
+		document.body.style.color = "DarkSlateGrey";
 		document.body.style.backgroundColor = "white";
 		var location = data.concat("images/LightTitle.png");
 		document.getElementById("title").src = location;
@@ -36,11 +36,53 @@ function background(data)
 			//pass
 		}
 		root.style.setProperty('--mainColour', '#B0C4DE');
-		root.style.setProperty('--textColour', '#778899');
+		root.style.setProperty('--textColour', '#2F4F4F');
 		root.style.setProperty('--backColour', '#FFFFFF');
 		root.style.setProperty('--shadowMain', '#A0B4CE');
 		root.style.setProperty('--shadowBack', '#DFDFDF');
 		localStorage.setItem("darkMode", 'false');
+	}
+	try{
+		var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+		freqArray = frequencyAnalasis();
+		
+		stringHTML = "";
+		for(i = 0; i<26; i++){
+			stringHTML = stringHTML.concat("<th>"+freqArray[i]+"</th>");
+		}
+		document.getElementById("exampleKey").innerHTML = stringHTML;
+		TESTER = document.getElementById('tester');
+		var dark = getComputedStyle(document.documentElement).getPropertyValue('--shadowMain');
+		if(dark=="#A0B4CE"){
+			var c = 'rgba(160,180,206,0.8)';
+			var l = 'rgba(255,255,255,0.8)';
+		}else{
+			var c = 'rgba(72,61,139,0.8)';
+			var l = 'rgba(0,0,0,0.8)';
+		}
+		console.log("dark "+dark);
+		var cs = [];
+		for(i=0; i<26; i++){
+			cs[i] = c;
+		}
+		var data = [
+		  {
+			x: letters,
+			y: freqArray,
+			marker:{
+				color: cs
+			},
+			type: 'bar'
+			
+		  }
+		];
+		var layout = {
+		  paper_bgcolor: l,
+		  plot_bgcolor: l
+		};
+		Plotly.newPlot( TESTER, data, layout );
+	}catch{
+		//is chill dont worry about it
 	}
 }
 function checkMode(data)
